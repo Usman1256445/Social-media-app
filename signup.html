@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialVibe - Modern Social Media</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <div id="authContainer" class="auth-container">
+        <div class="auth-box">
+            <div class="auth-header">
+                <h1>SocialVibe</h1>
+                <p>Connect with friends and the world</p>
+            </div>
+
+            <div id="errorMessage" class="error-message"></div>
+            <div id="successMessage" class="success-message"></div>
+
+            <div id="loginForm">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password">
+                </div>
+                <button class="btn-primary" onclick="handleLogin()">Log In</button>
+                <div class="auth-switch">
+                    Don't have an account? <a onclick="showSignup()">Sign up</a>
+                </div>
+            </div>
+
+            <div id="signupForm" class="hidden">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="signupName" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="signupEmail" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="signupPassword" placeholder="Create a password">
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="signupConfirmPassword" placeholder="Confirm your password">
+                </div>
+                <button class="btn-primary" onclick="handleSignup()">Sign Up</button>
+                <div class="auth-switch">
+                    Already have an account? <a onclick="showLogin()">Log in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mainApp" class="main-app hidden">
+        <header>
+    <div class="header-content">
+
+        <div class="logo">SocialVibe</div>
+
+        <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Search posts..." 
+            oninput="filterPosts()"
+            class="search-bar"
+        >
+        <select id="filterSelect" class="filter-dropdown" onchange="applyFilter()">
+    <option value="latest">Latest First</option>
+    <option value="oldest">Oldest First</option>
+    <option value="liked">Most Liked</option>
+</select>
+
+
+        <div class="user-info">
+            <div class="user-avatar" id="userAvatar"></div>
+            <span id="userName"></span>
+            <button class="btn-logout" onclick="handleLogout()">Logout</button>
+        </div>
+
+    </div>
+</header>
+
+
+        <div class="container">
+            <div class="create-post-card">
+                <h3>Create a Post</h3>
+                <textarea id="postContent" placeholder="What's on your mind?"></textarea>
+                <input type="text" id="postImageUrl" placeholder="Image URL (optional)">
+                <button class="btn-post" onclick="createPost()">Post</button>
+            </div>
+
+            <div id="postsFeed"></div>
+            <div id="editPopupContainer" class="hidden"></div>
+
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #4c2cff, #7366ff);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.form {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #fff;
+    font-size: 28px;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    background: transparent;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.input-box input:focus {
+    border-bottom: 2px solid #fff;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #ddd;
+    transition: 0.3s ease;
+}
+
+.input-box input:focus + label,
+.input-box input:valid + label {
+    top: 0;
+    font-size: 12px;
+    color: #fff;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #fff;
+    color: #4c2cff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #e6e6e6;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 18px;
+    color: #fff;
+}
+
+.login-link a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .form {
+        padding: 25px 20px;
+    }
+}
